@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:card_swiper/card_swiper.dart';
 
 class SaleContainer extends StatelessWidget {
   const SaleContainer({super.key});

@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kaspi_copy/app/app_home.dart';
@@ -56,9 +57,10 @@ final GoRouter router = GoRouter(
         // #enddocregion configuration-branches
 
         // The route branch for the second tab of the bottom navigation bar.
+        statefulShellBranch(path: RouterNames.qr, builder: const QrScreen()),
         statefulShellBranch(
             path: RouterNames.service, builder: const ServiceScreen()),
-        statefulShellBranch(path: RouterNames.qr, builder: const QrScreen()),
+
         statefulShellBranch(
             path: RouterNames.messages, builder: const MessagesScreen()),
 
