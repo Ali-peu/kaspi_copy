@@ -32,7 +32,6 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
         store.dispatch(AppActions.goHome);
     }
 
-
     navigationShell.goBranch(
       index,
       initialLocation: index == navigationShell.currentIndex,
@@ -43,7 +42,7 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     final store = Provider.of<Store<AppState>>(context);
     return Scaffold(
-      body: navigationShell,
+      body: SafeArea(child: navigationShell),
       bottomNavigationBar: NavigationBar(
         selectedIndex: store.state.navBarIndex,
         destinations: const [
