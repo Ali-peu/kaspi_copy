@@ -42,6 +42,7 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     final store = Provider.of<Store<AppState>>(context);
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(child: navigationShell),
       bottomNavigationBar: NavigationBar(
         selectedIndex: store.state.navBarIndex,
