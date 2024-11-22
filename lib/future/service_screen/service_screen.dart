@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaspi_copy/future/local_auth_screen/ui/screen/local_auth_screen.dart';
 import 'package:kaspi_copy/future/local_auth_screen/ui/widgets/pincode_fields.dart';
 
 class ServiceScreen extends StatelessWidget {
@@ -6,6 +7,6 @@ class ServiceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PinCodeScreen();
+    return const LocalAuthScreen();
   }
 }

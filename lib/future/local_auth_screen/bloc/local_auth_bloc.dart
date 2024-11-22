@@ -15,5 +15,27 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
       final value = await _localAuthRepo.isAppPincodeRight(event.pincode);
       emit(state.copyWith(isSuccess: value));
     });
+    on<AddEnterPin>((event, emit) {
+      if (state.enteredPin.length == 3) {
+        add(EnterPassword(
+            pincode:
+                getValue(List.from(state.enteredPin)..add(event.pinValue))));
+      }
+      emit(state.copyWith(
+          enteredPin: List.from(state.enteredPin)..add(event.pinValue)));
+    });
+
+    on<ClearPinCode>((event, emit) {
+      emit(state.copyWith(enteredPin: []));
+    });
+  }
+
+  int getValue(List<String?> list) {
+    String value = '';
+    for (var element in list) {
+      value = value + element!;
+    }
+
+    return int.tryParse(value) ?? 0;
   }
 }

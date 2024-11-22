@@ -10,4 +10,16 @@ class EnterPassword extends LocalAuthEvent {
   const EnterPassword({required this.pincode});
 }
 
+class AddEnterPin extends LocalAuthEvent {
+  final String pinValue;
+
+  const AddEnterPin({required this.pinValue});
+}
+
+class ClearPinCode extends LocalAuthEvent {
+  
+
+  const ClearPinCode();
+}
+
 
