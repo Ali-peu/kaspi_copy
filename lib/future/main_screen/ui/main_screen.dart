@@ -47,6 +47,25 @@ class _MainScreenState extends State<MainScreen> {
             ),
             KaspiServiceSliverGrid(),
             const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10,
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 1),
+                child: Divider(
+                  height: 1.5,
+                  color: Colors.black12,
+                ),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10,
+              ),
+            ),
+            const SliverToBoxAdapter(
               child: KaspiFeatures(),
             ),
             const SliverFillRemaining(

@@ -5,28 +5,33 @@ class SaleContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Color> colors = [Colors.red, Colors.blue, Colors.green, Colors.purple];
+    List<String> assetsPath = [
+      'assets/main_history_images/2.png',
+      'assets/main_history_images/3.png',
+      'assets/main_history_images/4.png',
+      'assets/main_history_images/1.png',
+    ];
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.15,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 4,
-          // itemHeight: MediaQuery.of(context).size.height * 0.2,
-          // itemWidth: MediaQuery.of(context).size.width * 0.4,
-          // autoplay: true,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.all(4),
-              child: Container(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 4,
+            // itemHeight: MediaQuery.of(context).size.height * 0.2,
+            // itemWidth: MediaQuery.of(context).size.width * 0.4,
+            // autoplay: true,
+            itemBuilder: (context, index) {
+              return Container(
                 height: MediaQuery.of(context).size.height * 0.1,
                 width: MediaQuery.of(context).size.width * 0.5,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: colors[index],
                 ),
-              ),
-            );
-          }),
+                child: Image.asset(assetsPath[index]),
+              );
+            }),
+      ),
     );
   }
 }

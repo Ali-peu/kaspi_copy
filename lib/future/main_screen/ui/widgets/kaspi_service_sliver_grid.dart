@@ -14,15 +14,18 @@ class KaspiServiceSliverGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Service> services = [
-      Service('Магазин', 'assets/icons/store_12.png'),
-      Service('Мой банк', 'assets/icons/my_bank.png'),
-      Service('Платеж', 'assets/icons/platezh.png'),
-      Service('Переводы', 'assets/icons/perevod.png'),
-      Service('Travel', 'assets/icons/travel.png'),
-      Service('Travel', 'assets/icons/travel.png'),
-      Service('Гос услуги', 'assets/icons/gos_uslugi.png'),
-      Service('Объявление', 'assets/icons/ads.png'),
+      Service('Магазин', 'assets/icons/kaspi_shop_main.png'),
+      Service('Мой банк', 'assets/icons/kaspi_bank.png'),
+      Service('Платеж', 'assets/icons/kaspi_platezh.png'),
+      Service('Переводы', 'assets/icons/kaspi_perevod.png'),
+      Service('Magnum', 'assets/icons/kaspi_magnum.png'),
+      Service('Travel', 'assets/icons/kaspi_travel_main.png'),
+      Service('Гос услуги', 'assets/icons/kaspi_gov.png'),
+      Service('Объявлени', 'assets/icons/kaspi_ad.png'),
     ];
+    final List<double> heightList = [50, 45, 35, 35, 45, 45, 45, 44];
+    final List<double> widthList = [50, 45, 42, 42, 48, 48, 42, 48];
+
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
@@ -34,10 +37,9 @@ class KaspiServiceSliverGrid extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(4),
             child: ServiceItemWithIconAndName(
-              name: services[index].name,
-              icon:
-                  Image.asset(services[index].iconPath, height: 50, width: 50),
-            ),
+                name: services[index].name,
+                icon: Image.asset(services[index].iconPath,
+                    height: heightList[index], width: widthList[index])),
           );
         },
         childCount: services.length,

@@ -37,4 +37,17 @@ flutter:
   assets: 
       - assets/
       - assets/icons/
+      - assets/icons_from_original/
+      - assets/main_history_images/
+      - assets/online_market/
+
+
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/roboto_font/Roboto-Black.ttf
+        - asset: assets/roboto_font/Roboto-Bold.ttf
+        - asset: assets/roboto_font/Roboto-Light.ttf
+        - asset: assets/roboto_font/Roboto-Regular.ttf
 
